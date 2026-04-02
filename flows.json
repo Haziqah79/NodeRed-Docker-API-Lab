@@ -1,0 +1,124 @@
+[
+    {
+        "id": "6fe80805fbb17033",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7afce28cd3a29ed9",
+        "type": "http in",
+        "z": "6fe80805fbb17033",
+        "name": "Receive Telemetry",
+        "url": "/api/sensor",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "efbe1c532bd36507",
+                "46d776a883f9358c"
+            ]
+        ]
+    },
+    {
+        "id": "efbe1c532bd36507",
+        "type": "http response",
+        "z": "6fe80805fbb17033",
+        "name": "Response",
+        "statusCode": "200",
+        "headers": {},
+        "x": 500,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "46d776a883f9358c",
+        "type": "debug",
+        "z": "6fe80805fbb17033",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "8220b87ef4ad7ac1",
+        "type": "http in",
+        "z": "6fe80805fbb17033",
+        "name": "Receive Telemetry",
+        "url": "/api/sensor",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 480,
+        "wires": [
+            [
+                "93e26b9331333a1f",
+                "8ed0554672dd2144"
+            ]
+        ]
+    },
+    {
+        "id": "f28ae860eefbfe5c",
+        "type": "http response",
+        "z": "6fe80805fbb17033",
+        "name": "Response",
+        "statusCode": "200",
+        "headers": {},
+        "x": 760,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "93e26b9331333a1f",
+        "type": "debug",
+        "z": "6fe80805fbb17033",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "8ed0554672dd2144",
+        "type": "function",
+        "z": "6fe80805fbb17033",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "f28ae860eefbfe5c"
+            ]
+        ]
+    }
+]
